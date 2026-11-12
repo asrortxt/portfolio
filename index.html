@@ -505,7 +505,7 @@ body.inspect .insp-box,body.inspect .insp-tag.on,body.inspect .insp-grid{display
   var nameEl = document.getElementById('name'), sizeEl = document.getElementById('size');
   var chars = [].slice.call(nameEl.querySelectorAll('.ch'));
   var REST = 800, w = chars.map(function(){ return reduce ? REST : 100; });
-  var t0 = performance.now(), fontPx = 100, basePx = 100, userScale = 1, lastSize = '';
+  var t0 = performance.now(), fontPx = 100, basePx = 100, userScale = 1, userSet = false, lastSize = '';
   function setW(el,v){ el.style.fontVariationSettings = '"wght" '+v.toFixed(0); el.style.fontWeight = Math.round(v/100)*100; }
   function fit(){
     chars.forEach(function(c){ setW(c,800); });
@@ -514,6 +514,7 @@ body.inspect .insp-box,body.inspect .insp-tag.on,body.inspect .insp-grid{display
     var avail = nameEl.parentNode.parentNode.clientWidth
       - parseFloat(getComputedStyle(nameEl.parentNode.parentNode).paddingLeft)*2 - (innerWidth<700 ? 14 : 30);
     basePx = clamp(100*avail/w100, 36, 230);
+    if (!userSet) userScale = Math.min(1, 590/Math.max(1, avail));   // default: a compact title (about 590 px wide), full width on phones
     fontPx = Math.max(30, basePx*userScale);
     nameEl.style.fontSize = fontPx+'px';
     chars.forEach(function(c,i){ setW(c,w[i]); });
@@ -547,6 +548,7 @@ body.inspect .insp-box,body.inspect .insp-tag.on,body.inspect .insp-grid{display
     hd.addEventListener('pointerdown', function(e){
       e.preventDefault();
       drag = {x:e.clientX, w:nameEl.getBoundingClientRect().width, s:userScale};
+      userSet = true;
       try{ hd.setPointerCapture(e.pointerId); }catch(_){}
       nameWrap.classList.add('drag');
     });
