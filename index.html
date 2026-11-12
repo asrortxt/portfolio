@@ -274,11 +274,13 @@ body::after{content:"";position:fixed;inset:0;z-index:90;pointer-events:none;bac
 .pal .none{padding:18px 12px;color:var(--muted)}
 
 /* ---------- inspector ---------- */
-.insp-btn{position:fixed;right:18px;bottom:18px;z-index:60;display:inline-flex;align-items:center;gap:10px;min-height:46px;padding:0 18px 0 14px;border-radius:2px;border:1.5px solid var(--navy);background:#fff;color:var(--navy);font:600 .9375rem var(--body);cursor:pointer;box-shadow:0 8px 24px rgba(0,255,102,.25)}
+.insp-btn{position:fixed;right:18px;bottom:18px;z-index:60;display:inline-flex;align-items:center;gap:10px;min-height:44px;padding:0 16px 0 12px;border-radius:2px;border:1px solid rgba(0,255,102,.55);background:rgba(0,10,4,.88);color:#00ff66;font:500 .875rem 'JetBrains Mono',ui-monospace,monospace;cursor:pointer;box-shadow:0 0 18px rgba(0,255,102,.18);transition:background .15s,box-shadow .15s}
+.insp-btn:hover{background:rgba(0,40,16,.95);box-shadow:0 0 24px rgba(0,255,102,.35)}
+.insp-btn:focus-visible{outline:2px solid #00ff66;outline-offset:3px}
 .insp-btn svg{width:18px;height:18px}
-.insp-btn kbd{font:inherit;font-weight:500;color:#2E6B45;border:1px solid #9AD3B0;border-radius:2px;padding:0 6px;line-height:1.5}
-.insp-btn[aria-pressed="true"]{background:var(--sun);border-color:var(--sun);color:#000}
-.insp-btn[aria-pressed="true"] kbd{color:#000;border-color:rgba(0,0,0,.5)}
+.insp-btn kbd{font:inherit;font-weight:500;color:#00ff66;opacity:.75;border:1px solid rgba(0,255,102,.45);border-radius:2px;padding:0 6px;line-height:1.5}
+.insp-btn[aria-pressed="true"]{background:#00ff66;border-color:#00ff66;color:#000}
+.insp-btn[aria-pressed="true"] kbd{color:#000;border-color:rgba(0,0,0,.5);opacity:1}
 @media (hover:none){.insp-btn kbd{display:none}}
 .insp-box{position:fixed;z-index:50;pointer-events:none;border:1.5px solid var(--pink);background:rgba(239,255,244,.1);display:none}
 .insp-tag{position:fixed;z-index:51;pointer-events:none;display:none;background:var(--pink);color:#000;font-size:.75rem;font-weight:600;line-height:1;padding:5px 7px;border-radius:3px;white-space:nowrap;font-variant-numeric:tabular-nums}
