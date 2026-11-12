@@ -181,7 +181,7 @@ section#contact{scroll-margin-top:60px}
 .shot img{display:block;width:100%;height:auto}
 .ptags{display:flex;flex-wrap:wrap;gap:8px;list-style:none;margin:16px 0 0;padding:0}
 .ptags li{padding:3px 10px;border:1px solid var(--line);border-radius:2px;color:var(--muted);font-size:.8125rem}
-.plink{display:inline-block;margin-top:18px;font-weight:500}
+.plink{display:inline-block;margin-top:18px;margin-right:26px;font-weight:500}
 @media (max-width:700px){.frames{grid-template-columns:1fr}}
 
 /* contact */
@@ -432,6 +432,7 @@ body.inspect .insp-box,body.inspect .insp-tag.on,body.inspect .insp-grid{display
             <h3>Онлайн-запись с&nbsp;Telegram-ботом</h3>
             <p>Сервис записи для барбершопа: клиент выбирает услугу и&nbsp;время, мастер подтверждает запись кнопкой в&nbsp;Telegram. Два клиента не могут занять одно время, даже если нажали одновременно.</p>
             <ul class="ptags"><li>React</li><li>Node.js</li><li>Redis</li><li>Telegram Bot API</li></ul>
+            <a class="plink" href="https://booking-telegram.vercel.app/" target="_blank" rel="noopener">Открыть демо</a>
             <a class="plink" href="https://github.com/asrortxt/booking-telegram" target="_blank" rel="noopener">Код на GitHub</a>
           </div>
         </article>
@@ -1003,7 +1004,7 @@ body.inspect .insp-box,body.inspect .insp-tag.on,body.inspect .insp-grid{display
     '.path p':['HTML, CSS and JavaScript basics, first small websites.','Components, TypeScript, state management, first pet projects.','Node.js, Express, PostgreSQL, MongoDB, my own APIs.','I take projects from idea to deploy and keep expanding the stack.'],
     '#projects h2':['Projects'],
     '.frame-body h3':['Online booking with a Telegram bot','A place for your project'],
-    '.plink':['Code on GitHub'],
+    '.plink':['Live demo','Code on GitHub'],
     '.frame-body p':['A booking service for a barbershop: the client picks a service and a time, the owner confirms with a button in Telegram. Two clients cannot take the same slot, even if they click at the same moment.',
                      'Need a landing page, a web app or an API? <a href="#contact">Get in touch</a> and we will talk it through.'],
     '.contact h2':['Get in touch'],
@@ -1097,7 +1098,7 @@ body.inspect .insp-box,body.inspect .insp-tag.on,body.inspect .insp-grid{display
   var GH = '<a href="https://github.com/asrortxt" target="_blank" rel="noopener">github.com/asrortxt</a>';
   var TG = '<a href="https://t.me/jxpxn" target="_blank" rel="noopener">@jxpxn</a>';
   var ML = '<a href="mailto:aasror700@gmail.com">aasror700@gmail.com</a>';
-  var REPO = 'https://github.com/asrortxt/booking-telegram';
+  var REPO = 'https://github.com/asrortxt/booking-telegram', DEMO = 'https://booking-telegram.vercel.app/';
   var SK = [['React / Next.js',85],['HTML / CSS / Tailwind',82],['TypeScript / JavaScript',80],['Git / REST API',75],['Node.js / Express',72],['PostgreSQL / MongoDB',65]];
   var GO = {top:'#top', about:'#about', terminal:'#terminal', stack:'#stack', path:'#path', projects:'#projects', contact:'#contact'};
   var OPEN = {telegram:'https://t.me/jxpxn', github:'https://github.com/asrortxt', email:'mailto:aasror700@gmail.com'};
@@ -1108,7 +1109,7 @@ body.inspect .insp-box,body.inspect .insp-tag.on,body.inspect .insp-grid{display
       help:'Команды:\n  about      кто я\n  skills     стек и уровень\n  path       как я сюда пришёл\n  projects   проекты\n  contact    как со мной связаться\n  open X     открыть: telegram | github | email\n  goto X     перейти: about | stack | path | projects | contact\n  lang X     язык сайта: ru | en\n  rain X     дождь из кода: on | off\n  inspect    включить или выключить инспектор\n  ls, cat    файлы\n  history    история команд\n  clear      очистить экран\n\nTab дополняет команду, стрелки вверх и вниз листают историю.',
       about:'Asrorbek, full-stack разработчик.\nПревращаю макеты в быстрые, отзывчивые интерфейсы: от лендинга до сложного React-приложения.\nПишу и серверную часть: логику, API, базы данных. Два года в разработке.',
       path:'1. Начало      HTML, CSS, JavaScript, первые сайты\n2. Развитие    React, TypeScript, пет-проекты\n3. Расширение  Node.js, Express, PostgreSQL, MongoDB\n4. Сейчас      full-stack, от идеи до деплоя',
-      projects:'booking-telegram  онлайн-запись с Telegram-ботом\n                  React, Node.js, Redis, Telegram Bot API\n                  <a href="'+REPO+'" target="_blank" rel="noopener">github.com/asrortxt/booking-telegram</a>\n\nНужен лендинг, веб-приложение или API? Введите <code>contact</code>.',
+      projects:'booking-telegram  онлайн-запись с Telegram-ботом\n                  React, Node.js, Redis, Telegram Bot API\n                  <a href="'+REPO+'" target="_blank" rel="noopener">github.com/asrortxt/booking-telegram</a>\n                  <a href="'+DEMO+'" target="_blank" rel="noopener">booking-telegram.vercel.app</a>\n\nНужен лендинг, веб-приложение или API? Введите <code>contact</code>.',
       unknown:function(c){ return 'Команда не найдена: '+c+'. Введите help, чтобы увидеть список.'; },
       needOpen:'Укажите, что открыть: open telegram | github | email',
       needGo:'Укажите раздел: goto about | stack | path | projects | contact',
@@ -1123,7 +1124,7 @@ body.inspect .insp-box,body.inspect .insp-tag.on,body.inspect .insp-grid{display
       help:'Commands:\n  about      who I am\n  skills     stack and level\n  path       how I got here\n  projects   projects\n  contact    how to reach me\n  open X     open: telegram | github | email\n  goto X     jump to: about | stack | path | projects | contact\n  lang X     site language: ru | en\n  rain X     code rain: on | off\n  inspect    turn the inspector on or off\n  ls, cat    files\n  history    command history\n  clear      clear the screen\n\nTab completes a command, up and down arrows walk the history.',
       about:'Asrorbek, full-stack developer.\nI turn mockups into fast, responsive interfaces: from a landing page to a complex React app.\nI write the server side too: logic, APIs, databases. Two years in development.',
       path:'1. Start      HTML, CSS, JavaScript, first websites\n2. Growth     React, TypeScript, pet projects\n3. Expansion  Node.js, Express, PostgreSQL, MongoDB\n4. Now        full-stack, from idea to deploy',
-      projects:'booking-telegram  online booking with a Telegram bot\n                  React, Node.js, Redis, Telegram Bot API\n                  <a href="'+REPO+'" target="_blank" rel="noopener">github.com/asrortxt/booking-telegram</a>\n\nNeed a landing page, a web app or an API? Type <code>contact</code>.',
+      projects:'booking-telegram  online booking with a Telegram bot\n                  React, Node.js, Redis, Telegram Bot API\n                  <a href="'+REPO+'" target="_blank" rel="noopener">github.com/asrortxt/booking-telegram</a>\n                  <a href="'+DEMO+'" target="_blank" rel="noopener">booking-telegram.vercel.app</a>\n\nNeed a landing page, a web app or an API? Type <code>contact</code>.',
       unknown:function(c){ return 'Command not found: '+c+'. Type help to see the list.'; },
       needOpen:'Say what to open: open telegram | github | email',
       needGo:'Say which section: goto about | stack | path | projects | contact',
